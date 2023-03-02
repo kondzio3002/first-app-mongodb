@@ -29,5 +29,13 @@ mongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUni
     app.listen('8000', () => {
       console.log('Server is running on port: 8000');
     });
+
+    db.collection('employees').find({ department: 'IT'}, (err, data) => {
+      if(!err) {
+        data.each((error, employee) => {
+          console.log(employee);
+        })
+      }
+    });
   }
 });
