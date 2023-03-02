@@ -18,6 +18,11 @@ mongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUni
     app.use(express.json());
     app.use(express.urlencoded({ extended: false }));
 
+    app.use((req, res, next) => {
+      req.db = db;
+      next();
+    });
+    
     app.use('/api', employeesRoutes);
     app.use('/api', departmentsRoutes);
     app.use('/api', productsRoutes);
@@ -28,26 +33,6 @@ mongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUni
 
     app.listen('8000', () => {
       console.log('Server is running on port: 8000');
-    });
-
-    /* db.collection('employees').find({ department: 'IT'}, (err, data) => {
-      if(!err) {
-        data.each((error, employee) => {
-          console.log(employee);
-        })
-      }
-    }); */
-
-    /* db.collection('departments').insertOne({ name: 'Management' }, err => {
-      if(err) console.log('err');
-    }); */
-
-    db.collection('employees').updateOne({ department: 'IT' }, { $set: { salary: 6000 }}, err => {
-      if(err) console.log(err);
-    });
-
-    db.collection('departments').deleteOne({ name: 'Management' }, (err) => {
-      if(err) console.log(err);
     });
   }
 });
