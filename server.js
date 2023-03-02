@@ -11,6 +11,7 @@ mongoClient.connect('mongodb://localhost:27017', { useNewUrlParser: true, useUni
     console.log(err);
   } else {
     console.log('Succesfully connected to the datebase');
+    const db = client.db('companyDB');
     const app = express();
 
     app.use(cors());
