@@ -1,0 +1,18 @@
+* [33m5a7f7bb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m Init mocha and chai
+* [33mb8a6e43[m[33m ([m[1;31morigin/master[m[33m)[m Add controllers
+* [33mece9783[m Add populate to employees.routes
+* [33m9c31ce5[m Update departments.routes
+* [33mc106a74[m Use mongoose in employees.routes.js and products.routes.js
+* [33m4e12c0e[m Use mongoose in departments.routes.js
+* [33m15c2f3f[m Init mongoose
+* [33mb6ac93b[m Fix
+* [33m82554e6[m Fix
+* [33mdf6ceea[m Edit products/employees .route.js
+* [33m13a8d6b[m Edit departments.routes.js
+* [33m9069da6[m Update and delete object from collection
+* [33m51b387c[m Insert object to collection(departments)
+* [33mcdd60a9[m Find data
+* [33m0365e71[m Add datebase companyDB
+* [33mf65d605[m Edit run mongoClient
+* [33m7301349[m Add mongoClient
+* [33m14f6d07[m Init app
