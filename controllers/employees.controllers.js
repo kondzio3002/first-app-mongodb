@@ -35,8 +35,8 @@ exports.getById = async (req, res) => {
 
 exports.postNew = async (req, res) => {
   try {
-    const { firstName, lastName } = req.body;
-    const newEmployee = new Employee({ firstName: firstName, lastName: lastName });
+    const { firstName, lastName, department } = req.body;
+    const newEmployee = new Employee({ firstName: firstName, lastName: lastName, department: department });
     await newEmployee.save();
     res.json({ message: 'OK' });
   }
@@ -46,12 +46,13 @@ exports.postNew = async (req, res) => {
 };
 
 exports.putById = async (req, res) => {
-  const { firstName, lastName } = req.body;
+  const { firstName, lastName, department } = req.body;
   try {
     const emp = await Employee.findById(req.params.id);
     if(emp) {
       emp.firstName = firstName;
       emp.lastName = lastName;
+      emp.department = department;
       await emp.save();
       res.json({ message: 'OK' });
     }
