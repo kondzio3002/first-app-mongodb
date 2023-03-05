@@ -19,7 +19,7 @@ describe('PUT /api/departments', () => {
     await Department.deleteMany();
   })
 
-  it('/ should insert new document to db and return success', async () => {
+  it('/:id should update chosen document and return success', async () => {
     const res = await request(server).put('/api/departments/5d9f1140f10a81216cfd4408').send({ name: '=Department #1=' });
     const updatedDepartment = await Department.findOne({ _id: '5d9f1140f10a81216cfd4408' });
     expect(res.status).to.be.equal(200);
