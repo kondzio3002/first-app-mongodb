@@ -10,10 +10,6 @@ describe('Employee', () => {
     emp.validate(err => {
       expect(err.errors).to.exist;
     });
-
-    after(() => {
-      mongoose.models = {};
-    });
   });
 
   it('Should throw an error if is not a string', () => {
@@ -26,10 +22,6 @@ describe('Employee', () => {
         expect(err.errors).to.exist;
       });
     }
-
-    after(() => {
-      mongoose.models = {};
-    });
   });
 
   it('should throw an error if no "firsName", "lastName" or "department" arg', () => {
@@ -48,10 +40,6 @@ describe('Employee', () => {
         expect(err.errors).to.exist;
       });
     }
-
-    after(() => {
-      mongoose.models = {};
-    });
   });
 
   it('Should accept if is good', () => {
@@ -63,10 +51,6 @@ describe('Employee', () => {
         expect(err).to.not.exist;
       });
     }
-
-    after(() => {
-      mongoose.models = {};
-    });
   });
 
 });
